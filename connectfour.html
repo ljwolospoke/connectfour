@@ -3,13 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Connect Four</title>
-  </head>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="connectfour.js"></script>
 <style>
 th, td {
   border: 5px solid blue;
   border-radius: 50px;
   padding: 2.5em;
-  
+  width: 50px;
+  height: 20px;
   background-color: white;
 }
 body {
@@ -28,20 +30,50 @@ button {
   text-align: center;
   width: 100px;
 }
+.redb {
+  background-color: red;
+}
+.yellowb {
+  background-color: yellow;
+}
 </style>
+<script>
+  $(function(){
+    $("td").click(function() {
+      // this is a controller (tictactoe) - event handler that fires when someone clicks on a cell
+      // we have to tell the model what to do
+      // we obtain the idz
+      alert("hey");
+      var cell = $(this).attr("id");
+      // we forward the move to the model
+      connectfour.makeMove(cell);
+    });
+
+    connectfour.listen(function(grid) {
+      // this is the listener that updates view
+      // every time this callback function is called, we need to update the grid
+      for (var r = 0; r < grid.length; r++) {
+        for (var c = 0; c < grid[r].length; c++) {
+          $("#R" + r + "C" + c).empty();
+          $("#R" + r + "C" + c).append(grid[r][c]);
+        }
+      }
+    });
+  });
+</script>
+  </head>
   <body>
     <table align="center">
-      <tr><td>1f</td><td>2f</td><td>3f</td><td>4f</td><td>5f</td><td>6f</td><td>7f</td></tr>
-      <tr><td>1e</td><td>2e</td><td>3e</td><td>4e</td><td>5e</td><td>6e</td><td>7e</td></tr>
-      <tr><td>1d</td><td>2d</td><td>3d</td><td>4d</td><td>5d</td><td>6d</td><td>7d</td></tr>
-      <tr><td>1c</td><td>2c</td><td>3c</td><td>4c</td><td>5c</td><td>6c</td><td>7c</td></tr>
-      <tr><td>1b</td><td>2b</td><td>3b</td><td>4b</td><td>5b</td><td>6b</td><td>7b</td></tr>
-      <tr><td>1a</td><td>2a</td><td>3a</td><td>4a</td><td>5a</td><td>6a</td><td>7a</td></tr>
+      <tr><td id="f11"></td><td id="f21">  </td><td id="f31">  </td><td id="f41">  </td><td id="f51">  </td><td id="f61">  </td><td id="f71">  </td></tr>
+      <tr><td id="e12"></td><td id="e22"></td><td id="e32"></td><td id="e42"></td><td id="e52"></td><td id="e62"></td><td id="e72"></td></tr>
+      <tr><td id="d13"></td><td id="d23"></td><td id="d33"></td><td id="d43"></td><td id="d53"></td><td id="d63"></td><td id="7d3"></td></tr>
+      <tr><td id="c14"></td><td id="c24"></td><td id="c34"></td><td id="c44"></td><td id="c54"></td><td id="c64"></td><td id="c74"></td></tr>
+      <tr><td id="b15"></td><td id="b25"></td><td id="b35"></td><td id="b45"></td><td id="b55"></td><td id="b65"></td><td id="b75"></td></tr>
+      <tr><td id="a16"></td><td id="a26"></td><td id="a36"></td><td id="a46"></td><td id="a56"></td><td id="a66"></td><td id="a76"></td></tr>
     </table>
 
     <div id="daButtons">
-    <button align="center" id="button1">Start</button>
-    <button align="center" id="button2">Reset</button>
+    <button align="center" id="button2"><a href="javascript:connectfour.clearGrid()">Reset</a></button>
   </div>
   </body>
 </html>
