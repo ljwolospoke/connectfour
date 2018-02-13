@@ -13,6 +13,7 @@ th, td {
   width: 50px;
   height: 20px;
   background-color: white;
+  text-align: center;
 }
 body {
   background-color: black;
@@ -39,11 +40,11 @@ button {
 </style>
 <script>
   $(function(){
+
     $("td").click(function() {
       // this is a controller (tictactoe) - event handler that fires when someone clicks on a cell
       // we have to tell the model what to do
       // we obtain the idz
-      alert("hey");
       var cell = $(this).attr("id");
       // we forward the move to the model
       connectfour.makeMove(cell);
@@ -64,7 +65,7 @@ button {
   </head>
   <body>
     <table align="center">
-      <tr><td id="f11"></td><td id="f21">  </td><td id="f31">  </td><td id="f41">  </td><td id="f51">  </td><td id="f61">  </td><td id="f71">  </td></tr>
+      <tr><td id="f11"></td><td id="f21"></td><td id="f31"></td><td id="f41"></td><td id="f51"></td><td id="f61"></td><td id="f71"></td></tr>
       <tr><td id="e12"></td><td id="e22"></td><td id="e32"></td><td id="e42"></td><td id="e52"></td><td id="e62"></td><td id="e72"></td></tr>
       <tr><td id="d13"></td><td id="d23"></td><td id="d33"></td><td id="d43"></td><td id="d53"></td><td id="d63"></td><td id="7d3"></td></tr>
       <tr><td id="c14"></td><td id="c24"></td><td id="c34"></td><td id="c44"></td><td id="c54"></td><td id="c64"></td><td id="c74"></td></tr>
