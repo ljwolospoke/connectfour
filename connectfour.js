@@ -19,6 +19,9 @@ var connectfour = (function() {
                 var y = Number(cell[2]);
                  // this is the y in RxCy
                 // check if the cell is empty
+                console.log(grid);
+                console.log(x);
+                console.log(y);
                 if (grid[x][y] === null) {
                   // play the move
                   grid[x][y] = current;
