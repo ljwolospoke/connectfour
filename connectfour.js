@@ -6,8 +6,8 @@ var connectfour = (function() {
               [null, null, null, null, null, null, null],
               [null, null, null, null, null, null, null],
               [null, null, null, null, null, null, null],
+              [null, null, null, null, null, null, null],
               [null, null, null, null, null, null, null]];
-
               var current = "red";
 
 

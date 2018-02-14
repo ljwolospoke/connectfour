@@ -56,8 +56,9 @@ button {
       // every time this callback function is called, we need to update the grid
       for (var r = 0; r < grid.length; r++) {
         for (var c = 0; c < grid[r].length; c++) {
-          $("#" + r + c).empty();
+          $("#f" + r + c).empty();
           $("#f" + r + c).append(grid[r][c]);
+          
         }
       }
     });
