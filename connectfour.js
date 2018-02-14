@@ -1,12 +1,13 @@
-var connectfour = (function(){
+
+var connectfour = (function() {
 
   var grid = [[null, null, null, null, null, null, null],
               [null, null, null, null, null, null, null],
               [null, null, null, null, null, null, null],
               [null, null, null, null, null, null, null],
               [null, null, null, null, null, null, null],
-              [null, null, null, null, null, null, null]]
-
+              [null, null, null, null, null, null, null],
+              [null, null, null, null, null, null, null]];
               var current = "red";
 
 
@@ -15,9 +16,12 @@ var connectfour = (function(){
                 // RxCy
 
                 var x = Number(cell[1]);
-                var y = Number(cell[2])
+                var y = Number(cell[2]);
                  // this is the y in RxCy
                 // check if the cell is empty
+                console.log(grid);
+                console.log(x);
+                console.log(y);
                 if (grid[x][y] === null) {
                   // play the move
                   grid[x][y] = current;
@@ -43,6 +47,9 @@ var connectfour = (function(){
                 // notify all the listeners (which update the views)
                 notify();
               }
+  
+              // store all the listeners
+              // we have to call all of them if something changes
               var listeners = [];
 
               // this function registers/adds a listener

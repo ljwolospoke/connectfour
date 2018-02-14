@@ -13,6 +13,7 @@ th, td {
   width: 50px;
   height: 20px;
   background-color: white;
+  text-align: center;
 }
 body {
   background-color: black;
@@ -39,23 +40,25 @@ button {
 </style>
 <script>
   $(function(){
+
     $("td").click(function() {
       // this is a controller (tictactoe) - event handler that fires when someone clicks on a cell
       // we have to tell the model what to do
       // we obtain the idz
-      alert("hey");
       var cell = $(this).attr("id");
       // we forward the move to the model
       connectfour.makeMove(cell);
     });
 
     connectfour.listen(function(grid) {
+      console.log("listen");
       // this is the listener that updates view
       // every time this callback function is called, we need to update the grid
       for (var r = 0; r < grid.length; r++) {
         for (var c = 0; c < grid[r].length; c++) {
-          $("#R" + r + "C" + c).empty();
-          $("#R" + r + "C" + c).append(grid[r][c]);
+          $("#f" + r + c).empty();
+          $("#f" + r + c).append(grid[r][c]);
+          
         }
       }
     });
@@ -64,12 +67,12 @@ button {
   </head>
   <body>
     <table align="center">
-      <tr><td id="f11"></td><td id="f21">  </td><td id="f31">  </td><td id="f41">  </td><td id="f51">  </td><td id="f61">  </td><td id="f71">  </td></tr>
-      <tr><td id="e12"></td><td id="e22"></td><td id="e32"></td><td id="e42"></td><td id="e52"></td><td id="e62"></td><td id="e72"></td></tr>
-      <tr><td id="d13"></td><td id="d23"></td><td id="d33"></td><td id="d43"></td><td id="d53"></td><td id="d63"></td><td id="7d3"></td></tr>
-      <tr><td id="c14"></td><td id="c24"></td><td id="c34"></td><td id="c44"></td><td id="c54"></td><td id="c64"></td><td id="c74"></td></tr>
-      <tr><td id="b15"></td><td id="b25"></td><td id="b35"></td><td id="b45"></td><td id="b55"></td><td id="b65"></td><td id="b75"></td></tr>
-      <tr><td id="a16"></td><td id="a26"></td><td id="a36"></td><td id="a46"></td><td id="a56"></td><td id="a66"></td><td id="a76"></td></tr>
+      <tr><td id="f00"></td><td id="f10"></td><td id="f20"></td><td id="f30"></td><td id="f40"></td><td id="f50"></td><td id="f60"></td></tr>
+      <tr><td id="f01"></td><td id="f11"></td><td id="f21"></td><td id="f31"></td><td id="f41"></td><td id="f51"></td><td id="f61"></td></tr>
+      <tr><td id="f02"></td><td id="f12"></td><td id="f22"></td><td id="f32"></td><td id="f42"></td><td id="f52"></td><td id="f62"></td></tr>
+      <tr><td id="f03"></td><td id="f13"></td><td id="f23"></td><td id="f33"></td><td id="f43"></td><td id="f53"></td><td id="f63"></td></tr>
+      <tr><td id="f04"></td><td id="f14"></td><td id="f24"></td><td id="f34"></td><td id="f44"></td><td id="f54"></td><td id="f64"></td></tr>
+      <tr><td id="f05"></td><td id="f15"></td><td id="f25"></td><td id="f35"></td><td id="f45"></td><td id="f55"></td><td id="f65"></td></tr>
     </table>
 
     <div id="daButtons">
