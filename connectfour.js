@@ -47,7 +47,7 @@ var connectfour = (function() {
                 // notify all the listeners (which update the views)
                 notify();
               }
-  
+
               // store all the listeners
               // we have to call all of them if something changes
               var listeners = [];
@@ -66,11 +66,12 @@ var connectfour = (function() {
                   listeners[i](grid);
                 }
               }
-
-              // all functionality is accessed through the methods below
               return {
                 makeMove: makeMove,
                 clearGrid: clearGrid,
                 listen: listen
               };
-});
+
+
+
+})();
