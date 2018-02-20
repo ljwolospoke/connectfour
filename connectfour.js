@@ -1,13 +1,13 @@
 
 var connectfour = (function() {
 
-  var grid = [[null, null, null, null, null, null, null],
-              [null, null, null, null, null, null, null],
-              [null, null, null, null, null, null, null],
-              [null, null, null, null, null, null, null],
-              [null, null, null, null, null, null, null],
-              [null, null, null, null, null, null, null],
-              [null, null, null, null, null, null, null]];
+  var grid = [[null, null, null, null, null, null],
+              [null, null, null, null, null, null],
+              [null, null, null, null, null, null],
+              [null, null, null, null, null, null],
+              [null, null, null, null, null, null],
+              [null, null, null, null, null, null],
+              [null, null, null, null, null, null]];
               var current = "red";
 
 
@@ -19,9 +19,8 @@ var connectfour = (function() {
                 var y = Number(cell[2]);
                  // this is the y in RxCy
                 // check if the cell is empty
-                console.log(grid);
-                console.log(x);
-                console.log(y);
+                
+          if (grid[x][y + 1] !== null){
                 if (grid[x][y] === null) {
                   // play the move
                   grid[x][y] = current;
@@ -37,6 +36,7 @@ var connectfour = (function() {
                   notify();
                 }
               }
+            }
               function clearGrid() {
                 // set all cells to null
                 for (var r = 0; r < grid.length; r++) {
@@ -47,7 +47,7 @@ var connectfour = (function() {
                 // notify all the listeners (which update the views)
                 notify();
               }
-  
+
               // store all the listeners
               // we have to call all of them if something changes
               var listeners = [];
@@ -66,11 +66,12 @@ var connectfour = (function() {
                   listeners[i](grid);
                 }
               }
-
-              // all functionality is accessed through the methods below
               return {
                 makeMove: makeMove,
                 clearGrid: clearGrid,
                 listen: listen
               };
-});
+
+
+
+})();
