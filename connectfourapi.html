@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Connect Four API</title>
+  <style>
+  table, td {
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
+  </style>
+</head>
+<body>
+  <h2>Connect Four API Documentation</h2>
+  This API is for the Connect Four game. The game simply implements Connect Four for two players. When you include connectfour.js a global variable is created called connectfour. All methods should be called on this object. For example, we can make a move by doing <b>connectfour.makeMove("R1C2")</b> Below you can find the API:<br><br>
+  <table>
+    <tr><td>Method Name</td><td>Parameters</td><td>Return Value</td></td><td>Description</td></tr>
+    <tr><td>makeMove(cell)</td><td><i>cell:</i> specifies in which cell the move should be made. It should be specified as fxy, where x is a number and refers to the row, and y is also a number and refers to the column.</td><td>None</td></td><td>This method allows to make a move. The moves will automatically alternate the player. The game ends when one of the players wins or it's a draw.</td></tr>
+    <tr><td>clearGrid()</td><td><i>None</i></td><td>None</td><td>Clears the playing grid and starts a new game.</td></tr>
+    <tr><td>listen(cb)</td><td><i>cb:</i> is the callback function. This function will be called when the grid changes. The grid is passed to the callback function</td><td>None</td><td>The listen(cb) functionality is used to track change in the model and receive notifications. This allows the UI to be updated when the model changes.</td></tr>
+  </table>
+</body>
+</html>

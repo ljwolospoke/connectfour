@@ -54,10 +54,10 @@ button {
       console.log("listen");
       // this is the listener that updates view
       // every time this callback function is called, we need to update the grid
-      for (var r = 0; r < grid.length; r++) {
-        for (var c = 0; c < grid[r].length; c++) {
-          $("#f" + r + c).empty();
-          $("#f" + r + c).css("background-color", grid[r][c]);
+      for (var x = 0; x < grid.length; x++) {
+        for (var y = 0; y < grid[x].length; y++) {
+          $("#f" + x + y).empty();
+          $("#f" + x + y).css("background-color", grid[x][y]);
 
         }
       }
@@ -75,7 +75,7 @@ button {
       <tr><td id="f05"></td><td id="f15"></td><td id="f25"></td><td id="f35"></td><td id="f45"></td><td id="f55"></td><td id="f65"></td></tr>
     </table>
     <div id="daButtons">
-    <button align="center" id="button2">Reset</button>
+    <button align="center" id="button2"><a href="javascript:connectfour.clearGrid()">Reset</a></button>
   </div>
   </body>
 </html>
