@@ -19,9 +19,10 @@ var connectfour = (function() {
                 var y = Number(cell[2]);
                  // this is the y in RxCy
                 // check if the cell is empty
-                
+
           if (grid[x][y + 1] !== null){
                 if (grid[x][y] === null) {
+
                   // play the move
                   grid[x][y] = current;
 
@@ -41,7 +42,8 @@ var connectfour = (function() {
                 // set all cells to null
                 for (var r = 0; r < grid.length; r++) {
                   for (var c = 0; c < grid[r].length; c++) {
-                    grid[r][c] = null;
+                  grid[r][c] = null;
+                  
                   }
                 }
                 // notify all the listeners (which update the views)
