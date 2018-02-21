@@ -19,15 +19,26 @@ var connectfour = (function() {
                 var y = Number(cell[2]);
                  // this is the y in RxCy
                 // check if the cell is empty
+                for (var i = 5; i > 0; i--){
+                  if (grid[x][i] === null){
+                    grid[x][i] = current;
+                    if (current === "red"){
+                      current = "yellow";
+                      }
+                      else {
+                        current = "red";
+                    }
+                    notify();
+                    break;
+                  }
+                }
 
-                
-             
 
-
-              if (grid[x][y + 1] !== null){
+    /*          if (grid[x][y + 1] !== null){
 
                 if (grid[x][y] === null) {
-
+                  console.log(x);
+                  console.log(y);
                   // play the move
                   grid[x][y] = current;
 
@@ -41,14 +52,14 @@ var connectfour = (function() {
                   // notify all the listeners (which update the views)
                   notify();
                 }
-              }
+              }*/
             }
               function clearGrid() {
                 // set all cells to null
                 for (var r = 0; r < grid.length; r++) {
                   for (var c = 0; c < grid[r].length; c++) {
                   grid[r][c] = null;
-                  
+
                   }
                 }
                 // notify all the listeners (which update the views)
