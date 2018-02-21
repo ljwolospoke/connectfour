@@ -31,15 +31,7 @@ button {
   text-align: center;
   width: 100px;
 }
-.redb {
-  background-color: red;
-}
-.yellowb {
-  background-color: yellow;
-}
-.reset {
-  background-color: white;
-}
+
 </style>
 <script>
   $(function(){
@@ -54,7 +46,6 @@ button {
     });
 
     connectfour.listen(function(grid) {
-      console.log("listen");
       // this is the listener that updates view
       // every time this callback function is called, we need to update the grid
       for (var r = 0; r < grid.length; r++) {

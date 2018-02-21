@@ -20,7 +20,12 @@ var connectfour = (function() {
                  // this is the y in RxCy
                 // check if the cell is empty
 
-          if (grid[x][y + 1] !== null){
+                
+             
+
+
+              if (grid[x][y + 1] !== null){
+
                 if (grid[x][y] === null) {
 
                   // play the move
