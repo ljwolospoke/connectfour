@@ -37,6 +37,9 @@ button {
 .yellowb {
   background-color: yellow;
 }
+.reset {
+  background-color: white;
+}
 </style>
 <script>
   $(function(){
@@ -54,11 +57,13 @@ button {
       console.log("listen");
       // this is the listener that updates view
       // every time this callback function is called, we need to update the grid
-      for (var x = 0; x < grid.length; x++) {
-        for (var y = 0; y < grid[x].length; y++) {
-          $("#f" + x + y).empty();
-          $("#f" + x + y).css("background-color", grid[x][y]);
-
+      for (var r = 0; r < grid.length; r++) {
+        for (var c = 0; c < grid[r].length; c++) {
+          $("#f" + r + c).empty();
+          $("#f" + r + c).css("background-color", grid[r][c]);
+          if (grid[r][c] === null){
+            $("#f" + r + c).css("background-color", "white");
+          }
         }
       }
     });

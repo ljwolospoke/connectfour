@@ -22,6 +22,7 @@ var connectfour = (function() {
 
           if (grid[x][y + 1] !== null){
                 if (grid[x][y] === null) {
+
                   // play the move
                   grid[x][y] = current;
 
@@ -39,9 +40,10 @@ var connectfour = (function() {
             }
               function clearGrid() {
                 // set all cells to null
-                for (var x = 0; x < grid.length; x++) {
-                  for (var y = 0; y < grid[x].length; y++) {
-                    grid[x][y] = null;
+                for (var r = 0; r < grid.length; r++) {
+                  for (var c = 0; c < grid[r].length; c++) {
+                  grid[r][c] = null;
+                  
                   }
                 }
                 // notify all the listeners (which update the views)
