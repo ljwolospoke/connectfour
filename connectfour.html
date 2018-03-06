@@ -31,12 +31,21 @@ button {
   text-align: center;
   width: 100px;
 }
-
+.redb {
+  background-color: red;
+}
+.yellowb {
+  background-color: yellow;
+}
+.reset {
+  background-color: white;
+}
 </style>
 <script>
   $(function(){
 
     $("td").click(function() {
+      // this is a controller (tictactoe) - event handler that fires when someone clicks on a cell
       // we have to tell the model what to do
       // we obtain the idz
       var cell = $(this).attr("id");
@@ -45,6 +54,7 @@ button {
     });
 
     connectfour.listen(function(grid) {
+      console.log("listen");
       // this is the listener that updates view
       // every time this callback function is called, we need to update the grid
       for (var r = 0; r < grid.length; r++) {
